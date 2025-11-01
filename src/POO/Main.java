@@ -24,6 +24,12 @@ public class Main {
 
         System.out.println("Para la persona 1 sabemos que tiene " + persona1.getEdad() + " años.");
 
+        Libro l1 = new Libro("El Quijote", "12345", "Planeta", "espanol", 600, 1605, true);
+        Biblioteca b1 = new Biblioteca("Municipal", "Calle Mayor 10");
+
+        b1.esExtranjero(l1);
+        b1.informacion();
+
 
     }
 }
