@@ -82,7 +82,7 @@ public class Sala {
         }
     }
 
-    public void informacion(){
+    public void mostrarInfo(){
         System.out.println("Sala: " + nombre + " - " + capacidad + ". Se utiliza para " + tipo + ". Dispone de pizarra: " + pizarra + ". Está disponible: " + disponibleReserva);
     }
 }

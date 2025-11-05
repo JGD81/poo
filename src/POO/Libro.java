@@ -98,13 +98,13 @@ public class Libro {
 
     public void esExtranjero(){
         if (!idioma.equalsIgnoreCase("espanol")){
-            System.out.println("El idioma del libro no es es espanol, es " + idioma);
+            System.out.println("El idioma del libro no es espanol, es " + idioma);
         }else{
             System.out.println("El idioma del libro es espanol");
         }
     }
 
-    public void informacion(){
+    public void mostrarInfo(){
         System.out.println(" Libro: " + titulo + " - " + editorial + "(" + anno + "). " + idioma + ", "
          + numeroPaginas + ". Está disponible: " + estaDisponible);
     }

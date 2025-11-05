@@ -1,120 +1,116 @@
 package POO;
 
-import javax.print.DocFlavor.STRING;
-
 public class PersonaPoo {
-    /**
-     * Definicion de atributos de la persona
-     */
 
-    String nombre;
-    int edad;
-    String  direccion;
-    String apellido;
-    String DNI;
-    String email;
-    String telefono;
-    String profesion;
-    String anios_experiencia;
+    // Atributos
+    private String nombre;
+    private int edad;
+    private String direccion;
+    private String apellido;
+    private String DNI;
+    private String email;
+    private String telefono;
+    private String profesion;
+    private String anios_experiencia;
 
+    // Constructor vacío
+    public PersonaPoo() {
+        System.out.println("Se ha creado una persona sin datos.");
+    }
 
-    /**
-     * Defincion del comportamiento de la persona
-     */
-
-     public PersonaPoo (String nombre, int edad) {
-
+    // Constructor con datos básicos
+    public PersonaPoo(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
-        this.direccion= direccion;
-        this.apellido = apellido; 
-        this.DNI = DNI;
-        this.email = email;
-        this.telefono = telefono;
-        this.profesion = profesion;
-        this.anios_experiencia = anios_experiencia;
-
-     }
-
-    public void MostrarInformacion(){
-
-        System.out.println("Nombre " + this.nombre + " , edad: " + this.edad + " y vive en " + this.direccion) ;
     }
 
-    public void setDireccion (String direccion) {
+    // Métodos getters y setters
+    public String getNombre() {
+         return nombre; 
+        }
 
-        this.direccion=direccion;
-    }
+    public void setNombre(String nombre) {
+         this.nombre = nombre; 
+        }
 
-    public int getEdad(){
+    public int getEdad() {
+         return edad; 
+        }
 
-        return this.edad;
-    }
-    
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    public void setEdad(int edad) {
+         this.edad = edad; 
+        }
+
+    public String getDireccion() {
+         return direccion; 
+        }
+
+    public void setDireccion(String direccion) {
+         this.direccion = direccion; 
+        }
 
     public String getApellido() {
-        return this.apellido;
-    }
+         return apellido; 
+        }
 
-    public void setDNI(String dNI) {
-        DNI = dNI;
-    }
+    public void setApellido(String apellido) {
+         this.apellido = apellido; 
+        }
 
     public String getDNI() {
-        return this.DNI;
-    }
+         return DNI; 
+        }
+
+    public void setDNI(String DNI) {
+         this.DNI = DNI; 
+        }
+
+    public String getEmail() {
+         return email; 
+        }
 
     public void setEmail(String email) {
-        this.email = email;
-    }
-   
-    public String getEmail() {
-        return this.email;
-    }
+         this.email = email; 
+        }
+
+    public String getTelefono() {
+         return telefono; 
+        }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-    
-    public String getTelefono() {
-        return this.telefono;
-    }
-
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
-    }
+         this.telefono = telefono; 
+        }
 
     public String getProfesion() {
-        return this.profesion;
-    }
+         return profesion; 
+        }
+
+    public void setProfesion(String profesion) {
+         this.profesion = profesion; 
+        }
+
+    public String getAnios_experiencia() {
+         return anios_experiencia; 
+        }
 
     public void setAnios_experiencia(String anios_experiencia) {
-        this.anios_experiencia = anios_experiencia;
-    }
-    public String getAnios_experiencia() {
-        return this.anios_experiencia;
+         this.anios_experiencia = anios_experiencia; }
+
+    // Método adicional
+    public void mostrarInfo() {
+        System.out.println("Nombre: " + nombre + " " + apellido + ", Edad: " + edad + ", Dirección: " + direccion);
     }
 
-    public boolean estaJubilado(){
-
-        if (this.edad > 65) {
-            System.out.println("La persona está jubilad@");
+    public boolean estaJubilado() {
+        if (edad >= 65) {
+            System.out.println("La persona está jubilada.");
             return true;
-        }else{
-            if (this.edad>=18) {
-                System.out.println("La persona en cuestión está en edad de trabajar");
-            }else{
-                System.out.println("La persona en cuestión está en edad de trabajar.");
-            }
-                
-        return false;
+        } else if (edad >= 18) {
+            System.out.println("La persona está en edad de trabajar.");
+            return false;
+        } else {
+            System.out.println("La persona es menor de edad.");
+            return false;
+        }
     }
-
-
-    }
-
-
 }
