@@ -1,5 +1,7 @@
 package POO;
 
+import java.util.*;
+
 public class Sala {
     
     //Atributos
@@ -8,6 +10,8 @@ public class Sala {
     private boolean pizarra;
     private String tipo;
     private boolean disponibleReserva;
+    //Atributo para añadir colecciones de objetos(Ejercicio 4.3)
+    private List<PersonaPoo> personas;
 
     //Constructor vacío
     public Sala(){
@@ -21,6 +25,8 @@ public class Sala {
         this.pizarra = pizarra;
         this.tipo = tipo;
         this.disponibleReserva = disponibleReserva;
+        //Inicializar listas en el constructor (Ejercicio 4.3)
+        this.personas = new ArrayList<>();
     }
 
     //Getters
@@ -42,6 +48,13 @@ public class Sala {
 
     public boolean getDisponibleReserva(){
         return disponibleReserva;
+    }
+
+    //Getter para saber el número de personas en sala necesario
+    //para implementarlo en el método mostrarSalasDisponibles()
+    //(Ejercicio 4.4.3)
+    public int getNumeroPersonas(){
+        return personas.size();
     }
 
     //Setters
@@ -84,5 +97,37 @@ public class Sala {
 
     public void mostrarInfo(){
         System.out.println("Sala: " + nombre + " - " + capacidad + ". Se utiliza para " + tipo + ". Dispone de pizarra: " + pizarra + ". Está disponible: " + disponibleReserva);
+        //Añadido para el punto 4.4.2
+        System.out.println("Número de personas en la sala: " + personas.size());
     }
+
+    //Añadir personas a la sala (Ejercicio 4.3)
+    public void entrarPersona(PersonaPoo p){
+        if(personas.size() < capacidad){//Comprueba cuánta gente hay en la sala
+            personas.add(p);
+            System.out.println(p.getNombre() + " entró en la sala " + nombre + ".");
+        }else{
+            System.out.println("La sala " + nombre + " está llena. No puede entrar más gente.");
+        }
+    }
+
+    public void salirPersona(PersonaPoo p){
+        if (personas.isEmpty()){//Comprueba si la sala está vacía
+            System.out.println("No hay personas dentro de la sala para salir");
+        }else if (personas.remove(p)){//Si no está vacía, elimina a la persona
+            System.out.println(p.getNombre() + " se fue de la sala " + nombre);
+        }
+    }
+
+    public void mostrarPersonas(){
+        if(personas.isEmpty()){
+            System.out.println("No hay personas en la sala " + nombre + ".");
+        }else{
+            System.out.println("Personas en la sala " + nombre + ":");
+            for (PersonaPoo p : personas){
+                p.mostrarInfo();
+            }
+        }
+    }
+
 }

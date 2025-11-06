@@ -19,9 +19,11 @@ public class PersonaPoo {
     }
 
     // Constructor con datos básicos
-    public PersonaPoo(String nombre, int edad) {
+    public PersonaPoo(String nombre, String apellido, int edad, String direccion) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.edad = edad;
+        this.direccion = direccion;
     }
 
     // Métodos getters y setters

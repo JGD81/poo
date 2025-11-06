@@ -98,8 +98,8 @@ public class Biblioteca {
         }
     }
 
-    //Añadir salas
-    public void AddSala(Sala sala){
+    //Añadir salas (También en el ejercicio 4.4)
+    public void addSala(Sala sala){
         salas.add(sala);
         System.out.println("Se ha añadido la siguiente sala: " + sala.getNombre());
     }
@@ -129,7 +129,7 @@ public class Biblioteca {
 
     //Salas
     public void mostrarSalas(){
-        if (libros.isEmpty()){
+        if (salas.isEmpty()){
             System.out.println("No se encuentran salas en la biblioteca");
         }else{
             System.out.println("Salas que se encuentran en la biblioteca: ");
@@ -155,6 +155,31 @@ public class Biblioteca {
         System.out.println("No se encontro el libro: " + titulo);
         return null; 
     }
+
+    //Mostrar solo las salas que tienen 0 personas (Ejercicio 4.4.3)
+    public void mostrarSalasDisponibles(){
+        boolean esVacia = false;
+        for (Sala sala : salas){
+            if (sala.getNumeroPersonas() == 0){
+                sala.mostrarInfo();
+                esVacia = true;
+            }
+        }
+        if (!esVacia){
+            System.out.println("No hay salas disponibles");
+        }
+    }
+
+    //Mostrar el total de personas de todas las salas (Ejercicio 5)
+    public void mostrarTotalPersonas() {
+    int totalPersonas = 0;
+    for (Sala sala : salas) {
+        totalPersonas += sala.getNumeroPersonas(); // Sumamos las personas de cada sala
+    }
+    System.out.println("Número total de personas en todas las salas: " + totalPersonas);
+}
+
+
 
 
 
