@@ -116,6 +116,8 @@ public class Sala {
             System.out.println("No hay personas dentro de la sala para salir");
         }else if (personas.remove(p)){//Si no está vacía, elimina a la persona
             System.out.println(p.getNombre() + " se fue de la sala " + nombre);
+        }else{
+            System.out.println(p.getNombre() + " no se encontraba en la sala " + nombre);
         }
     }
 
