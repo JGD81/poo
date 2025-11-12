@@ -12,6 +12,8 @@ public class Biblioteca {
     //Atributos para añadir colecciones de objetos (Ejercicio 4.2)
     private List<Libro> libros; 
     private List<Sala> salas;
+    //Atributos para añadir nuevas listas a Biblioteca(Ejercicio 5.1)
+    private List<PersonaPoo> personas;
 
     //Constructor sin parámetros
     public Biblioteca() {
@@ -172,15 +174,24 @@ public class Biblioteca {
 
     //Mostrar el total de personas de todas las salas (Ejercicio 5)
     public void mostrarTotalPersonas() {
-    int totalPersonas = 0;
-    for (Sala sala : salas) {
-        totalPersonas += sala.getNumeroPersonas(); // Sumamos las personas de cada sala
-    }
+        int totalPersonas = 0;
+        for (Sala sala : salas) {
+            totalPersonas += sala.getNumeroPersonas(); // Sumamos las personas de cada sala
+        }
+    
     System.out.println("Número total de personas en todas las salas: " + totalPersonas);
+    }
+
+    //Método para crear Sala desde Biblioteca (Ejercicio 5.2)
+    public Sala crearSala(String nombre, int capacidad, boolean pizarra, String tipo, boolean disponibleReserva){
+        Sala nuevaSala = new Sala(nombre, capacidad, pizarra, tipo, disponibleReserva);
+        salas.add(nuevaSala);
+        return nuevaSala;
+    }
 }
 
 
 
 
 
-}
+

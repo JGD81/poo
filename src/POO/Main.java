@@ -25,21 +25,29 @@ public class Main {
         //Creamos el objeto sala (Ejercicio 4.2)
         Sala sala = new Sala();
 
-        //Creamos varias salas (Ejercicio 4.2)
+        //Se ha comentado porque a partir del ejercicio 5.2, será la Biblioteca la que gestione
+        //la creación de salas
+        /*  //Creamos varias salas (Ejercicio 4.2)
         Sala sala1 = new Sala("Estudio", 15, true, "Estudio", true);
         Sala sala2 = new Sala("Lectura", 15, true, "Lectura", true);
         Sala sala3 = new Sala("Exposiciones", 15, true, "Exposiciones", true);
         //Creamos otra sala para comprobar el método entrarPersona() (Ejercicio 4.3)
-        Sala sala4 = new Sala ("Presentaciones", 2, true, "Presentaciones", true);
+        Sala sala4 = new Sala ("Presentaciones", 2, true, "Presentaciones", true); */
 
-        //Añadimos salas a la biblioteca (Ejercicio 4.2)
+        //Creación de Salas desde Biblioteca (Ejercicio 5.2)
+        Sala sala1 = biblioteca.crearSala("Estudio", 15, true, "Estudio", true);
+
+        //Comentamos por el cambio de creación de salas (Ejercicio 5.2)
+        /*  //Añadimos salas a la biblioteca (Ejercicio 4.2)
         biblioteca.addSala(sala1);
         biblioteca.addSala(sala2);
         biblioteca.addSala(sala3);
-        biblioteca.addSala(sala4);
+        biblioteca.addSala(sala4); */
 
-        //Eliminamos sala
-        biblioteca.removeSala(sala2);
+        //Comentamos por el cambio de creación de salas (Ejercicio 5.2)
+        
+        /*  //Eliminamos sala
+        biblioteca.removeSala(sala2);  */
 
         //Mostrar contenido de las listas (Ejercicio 4.2)
         biblioteca.mostrarLibros();
@@ -53,7 +61,9 @@ public class Main {
         PersonaPoo p1 = new PersonaPoo("Antonio", "Díaz", 25, "Ancha, 21");
         PersonaPoo p2 = new PersonaPoo("Lourdes", "Fernández", 21, "Andrómeda, 1" );
         PersonaPoo p3 = new PersonaPoo("Andrés", "Pacheco", 22, "Larga, 4");
-        //Meter personas en la sala
+        
+        //Comentamos por el cambio de creación de salas (5.2)
+        /*  //Meter personas en la sala
         sala4.entrarPersona(p1);
         sala4.entrarPersona(p2);
         sala4.entrarPersona(p3);//La tercera no debería de entrar
@@ -64,7 +74,7 @@ public class Main {
         //Mostrar las salas disponibles (Ejercicio 4.4.3)
         biblioteca.mostrarSalasDisponibles();
         //Mostrar el total de personas en todas las salas
-        biblioteca.mostrarTotalPersonas();
+        biblioteca.mostrarTotalPersonas(); */
     }   
 }
 

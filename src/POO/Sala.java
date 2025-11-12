@@ -12,6 +12,10 @@ public class Sala {
     private boolean disponibleReserva;
     //Atributo para añadir colecciones de objetos(Ejercicio 4.3)
     private List<PersonaPoo> personas;
+    //Nuevos atributos (Ejercicio 5.1)
+    private int aforoMaximo;
+    private int numActualPersonas;
+    private int tipoSala;
 
     //Constructor vacío
     public Sala(){
@@ -19,7 +23,9 @@ public class Sala {
     }
 
     //Constructor con datos
-    public Sala (String nombre, int capacidad, boolean pizarra, String tipo, boolean disponibleReserva){
+    //Cambiamos el acceso al constructor (eliminamos el public), para que sea la clase Biblioteca
+    //la que controle la creación de salas (Ejercicio 5.2)
+    Sala (String nombre, int capacidad, boolean pizarra, String tipo, boolean disponibleReserva){
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.pizarra = pizarra;
