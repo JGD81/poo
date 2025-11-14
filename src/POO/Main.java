@@ -30,13 +30,11 @@ public class Main {
         //Creamos el objeto sala (Ejercicio 4.2)
         //Sala sala = new Sala();
         //Creamos slas de diferentes tipos y se añaden a la biblioteca (Ejercicio 5.7c)
-        SalaLectura salaLectura = new SalaLectura("Sala Cervantes", false, true, 30, "Lectura");
-        SalaEstudio salaEstudio = new SalaEstudio("Sala Quijote", false, true, 30, "Estudio", 15);
-        SalaInformatica salaInformatica = new SalaInformatica("Sala IBM", true, true, 30, "Informática", 30);
+        SalaLectura salaLectura = biblioteca.crearSalaLectura("Sala Cervantes", false, true, 30);
+        SalaEstudio salaEstudio = biblioteca.crearSalaEstudio("Sala Quijote", false, true, 30, 15);
+        SalaInformatica salaInformatica = biblioteca.crearSalaInformatica("Sala IBM", true, true, 30, 30);
         Sala salaGeneral = biblioteca.crearSala("Sala multiusos", true, true, 40, "Multiusos");
-        biblioteca.addSala(salaLectura);
-        biblioteca.addSala(salaEstudio);
-        biblioteca.addSala(salaInformatica);
+        
         
         //Se ha comentado porque a partir del ejercicio 5.2, será la Biblioteca la que gestione
         //la creación de salas

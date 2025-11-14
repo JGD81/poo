@@ -138,7 +138,7 @@ public class Biblioteca {
 
     //Añadir salas (También en el ejercicio 4.4)
     //Válido para el ejercicio 5.6b. Se añaden salas generales o salas de las subclases
-    public void addSala(Sala s){
+    private void addSala(Sala s){
         salas.add(s);
         System.out.println("Se ha añadido la siguiente sala: " + s.getNombre());
     }
@@ -226,6 +226,25 @@ public class Biblioteca {
         salas.add(nuevaSala);
         return nuevaSala;
     }
+    //Metodos para crear las otras salas que se crearan posteriormente. Si no se crean desde
+    //biblioteca, no se cumple la relación de composición entre Biblioteca y Sala
+    public SalaLectura crearSalaLectura(String nombre, boolean pizarra, boolean disponibleReserva, int aforoMaximo) {
+    SalaLectura s = new SalaLectura(nombre, pizarra, disponibleReserva, aforoMaximo, "Lectura");
+    salas.add(s);
+    return s;
+}
+
+public SalaEstudio crearSalaEstudio(String nombre, boolean pizarra, boolean disponibleReserva, int aforoMaximo, int numMesas) {
+    SalaEstudio s = new SalaEstudio(nombre, pizarra, disponibleReserva, aforoMaximo, "Estudio", numMesas);
+    salas.add(s);
+    return s;
+}
+
+public SalaInformatica crearSalaInformatica(String nombre, boolean pizarra, boolean disponibleReserva, int aforoMaximo, int equipos) {
+    SalaInformatica s = new SalaInformatica(nombre, pizarra, disponibleReserva, aforoMaximo, "Informática", equipos);
+    salas.add(s);
+    return s;
+}
 
     //Método para registrar una visita (Ejercicio 5.2 Dependencia)
     //También válido para Ejercicio 5.6)
