@@ -4,13 +4,19 @@ public class Main {
     public static void main(String[] args) throws Exception {
         
         //Creamos el objeto biblioteca (Ejercicio 4.2)
-        Biblioteca biblioteca = new Biblioteca("Biblioteca Municipal", "Calle Paseo Marítimo S/N");
+        //Biblioteca biblioteca = new Biblioteca("Biblioteca Municipal", "Calle Paseo Marítimo S/N");
+        
+        //Creamos la biblioteca según el ejercicio 7
+        Biblioteca biblioteca = new Biblioteca("Biblioteca Central", "Calle Larga S/N");
 
         //Creamos varios libros (Ejercicio 4.2)
-        Libro libro1 = new Libro("El Quijote", "123ABC", "Anaya", "espanol", 800, 1605, true);
-        Libro libro2 = new Libro("Harry Potter", "456DEF", "Bloomsbury", "ingles", 500, 1997, true);
-        Libro libro3 = new Libro("Cien años de soledad", "789GHI", "Sudamericana", "espanol", 400, 1967, false);
-
+        //Libro libro1 = new Libro("El Quijote", "123ABC", "Anaya", "espanol", 1605, true);
+        //Libro libro2 = new Libro("Harry Potter", "456DEF", "Bloomsbury", "ingles", 1997, true);
+        //Libro libro3 = new Libro("Cien años de soledad", "789GHI", "Sudamericana", "espanol", 1967, false);
+        
+        //Creamos distintos tipos de libros (Ejercicio 7)
+        LibroFisico libro1 = new LibroFisico("El Quijote", "ISB204", "Espasa", "Español", 1605, true, 850, "Pasillo 1, Fila 3");
+        LibroDigital libro2 = new LibroDigital("1984","ISB206" , "Editorial Black", "Español", 1904, true, "PDF", 100);
         //Añadimos los libros a la biblioteca (Ejercicio 4.2)
         biblioteca.addLibro(libro1);
         biblioteca.addLibro(libro2);

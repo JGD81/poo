@@ -6,7 +6,9 @@ public class Libro {
     private String isbn;
     private String editorial;
     private String idioma;
-    private int numeroPaginas;
+    //Eliminamos numeroPaginas en libro, ya que la vamos a introducir
+    //en la nueva subclase LibroFisico (Ejercicio 5.3) 
+    //private int numeroPaginas;
     private int anno;
     private boolean estaDisponible;
     
@@ -18,15 +20,18 @@ public class Libro {
         System.out.println("Se ha creado un libro sin datos.");
     }
     //Constructor con todos los parámetros
-    public Libro(String titulo, String isbn, String editorial, String idioma,int numeroPaginas, int anno, boolean estaDisponible){
+    public Libro(String titulo, String isbn, String editorial, String idioma, int anno, boolean estaDisponible){
         this.titulo = titulo;
         this.isbn = isbn;
         this.editorial = editorial;
         this.idioma = idioma;
-        this.numeroPaginas = numeroPaginas;
+        //Eliminado porque ahora el número de páginas
+        //serán solo para los libros físicos y se controlaran
+        //en dicha subclase (Ejercicio 5.3)
+        //this.numeroPaginas = numeroPaginas;
         this.anno = anno;
         this.estaDisponible = estaDisponible;
-             }
+    }
 
     //Getters
     public String getTitulo(){
@@ -45,9 +50,9 @@ public class Libro {
         return idioma;
     }
 
-    public int getNumeroPaginas(){
+    /*public int getNumeroPaginas(){
         return numeroPaginas;
-    }
+    } Eliminado porque el número de páginas estará en LibroFisico (Ejercicio 5.3)*/
 
     public int getAnno(){
         return anno;
@@ -74,9 +79,9 @@ public class Libro {
         this.idioma = idioma;
     }
 
-    public void setNumeroPaginas (int numeroPaginas){
+    /*public void setNumeroPaginas (int numeroPaginas){
         this.numeroPaginas = numeroPaginas;
-    }
+    } Eliminado porque el numero de páginas estará en LibroFisico (Ejercicio 5.3)*/
 
     public void setAnno (int anno){
         this.anno = anno;
@@ -105,8 +110,8 @@ public class Libro {
     }
 
     public void mostrarInfo(){
-        System.out.println(" Libro: " + titulo + " - " + editorial + "(" + anno + "). " + idioma + ", "
-         + numeroPaginas + ". Está disponible: " + estaDisponible);
+        System.out.println(" Libro: " + titulo + " - " + editorial + "(" + anno + "). " + idioma + 
+        ". Está disponible: " + estaDisponible);
     }
 
 }

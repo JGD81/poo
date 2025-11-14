@@ -88,14 +88,43 @@ public class Biblioteca {
     }
 
     public void mostrarInfo(){
+        System.out.println("----Biblioteca----");
         System.out.println("Biblioteca: "+ nombre + " - " + direccion + ". Abierto de " + horaApertura + " a " + horaCierre);
+
+        System.out.println("-----Libros en la Biblioteca-----");
+        if(libros.isEmpty()){
+            System.out.println("No hay libros registrados.");
+        }else{
+            for (Libro l : libros){
+                l.mostrarInfo();
+            }
+        }
+
+        System.out.println("-----Salas en la biblioteca-----");
+        if(salas.isEmpty()){
+            System.out.println("No hay salas registradas.");
+        }else{
+            for (Sala s : salas){
+                s.mostrarInfo();
+            }
+        }
+
+        System.out.println("-----Personas registradas-----");
+        if(personas.isEmpty()){
+            System.out.println("No hay personas registradas");
+        }else{
+            for(PersonaPoo p : personas){
+                p.mostrarInfo();
+            }
+        }
     }
 
     //Métodos para añadir y eliminar (Ejercicio 4.2)
     //Añadir libros
-    public void addLibro(Libro libro){
-        libros.add(libro);
-        System.out.println("Se ha añadido el siguiente libro: " + libro.getTitulo());
+    //También válido para el ejercicio 5.6c
+    public void addLibro(Libro l){
+        libros.add(l);
+        System.out.println("Se ha añadido el siguiente libro: " + l.getTitulo());
     }
 
     //Eliminar libros
@@ -108,9 +137,10 @@ public class Biblioteca {
     }
 
     //Añadir salas (También en el ejercicio 4.4)
-    public void addSala(Sala sala){
-        salas.add(sala);
-        System.out.println("Se ha añadido la siguiente sala: " + sala.getNombre());
+    //Válido para el ejercicio 5.6b. Se añaden salas generales o salas de las subclases
+    public void addSala(Sala s){
+        salas.add(s);
+        System.out.println("Se ha añadido la siguiente sala: " + s.getNombre());
     }
 
     //Eliminar salas
@@ -198,9 +228,17 @@ public class Biblioteca {
     }
 
     //Método para registrar una visita (Ejercicio 5.2 Dependencia)
-    public void registrarVisita(PersonaPoo persona){
-        System.out.println("Se ha registrado la visita de " + persona.getNombre() + " " + persona.getApellido() );
+    //También válido para Ejercicio 5.6)
+    public void registrarVisita(PersonaPoo p){
+        System.out.println("Se ha registrado la visita de " + p.getNombre() + " " + p.getApellido() );
     }
+
+    //Método para Asociar una persona como responsable de una sala (Ejercicio 5.6d)
+    public void asignarResponsable (Sala s, PersonaPoo p){
+        s.setResponsable(p);
+        System.out.println("Se ha asignado a " + p.getNombre() + " " + p.getApellido() + " como responsable de la sala: " + s.getNombre());
+    }
+    
 }
 
 
