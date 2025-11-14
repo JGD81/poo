@@ -61,6 +61,13 @@ public class Main {
         PersonaPoo p1 = new PersonaPoo("Antonio", "Díaz", 25, "Ancha, 21");
         PersonaPoo p2 = new PersonaPoo("Lourdes", "Fernández", 21, "Andrómeda, 1" );
         PersonaPoo p3 = new PersonaPoo("Andrés", "Pacheco", 22, "Larga, 4");
+
+        //Asignar responsable a una persona, desde el Setter creado en Sala (5.2 Asociación)
+        sala1.setResponsable(p1);
+        System.out.println(sala1.getResponsable().getNombre());
+        //Registrar visita con el método de biblioteca (5.2 Dependencia)
+        biblioteca.registrarVisita(p2);
+
         
         //Comentamos por el cambio de creación de salas (5.2)
         /*  //Meter personas en la sala

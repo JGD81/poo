@@ -17,6 +17,9 @@ public class Sala {
     private int aforoMaximo;
     private int numActualPersonas;
     private String tipoSala;
+    //Añadimos nuevo atributo (Ejercicio 5.2 Asociación)
+    //Usamos PersonaPoo como tipo de dato y responsable como atributo
+    private PersonaPoo responsable;
 
     //Constructor vacío
     public Sala(){
@@ -88,6 +91,11 @@ public class Sala {
         return numActualPersonas;
     }
 
+    //Getter para consultar el responsable (Ejercicio 5.2 Asociación)
+    public PersonaPoo getResponsable(){
+        return responsable;
+    }
+
     //Setters
     public void setNombre(String nombre){
         this.nombre = nombre;
@@ -115,6 +123,11 @@ public class Sala {
 
     public void setDisponibleReserva(boolean disponibleReserva){
         this.disponibleReserva = disponibleReserva;
+    }
+
+    //Setter para asignar al responsable
+    public void setResponsable (PersonaPoo responsable){
+        this.responsable = responsable;
     }
 
     //Métodos

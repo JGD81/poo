@@ -196,6 +196,11 @@ public class Biblioteca {
         salas.add(nuevaSala);
         return nuevaSala;
     }
+
+    //Método para registrar una visita (Ejercicio 5.2 Dependencia)
+    public void registrarVisita(PersonaPoo persona){
+        System.out.println("Se ha registrado la visita de " + persona.getNombre() + " " + persona.getApellido() );
+    }
 }
 
 
