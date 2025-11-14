@@ -20,7 +20,6 @@ public class Main {
         //Añadimos los libros a la biblioteca (Ejercicio 4.2)
         biblioteca.addLibro(libro1);
         biblioteca.addLibro(libro2);
-        biblioteca.addLibro(libro3);
 
         //Eliminamos libros que ya existen (Ejercicio 4.2)
         biblioteca.removeLibro(libro2);
@@ -29,8 +28,16 @@ public class Main {
         biblioteca.removeLibro(libro2);
 
         //Creamos el objeto sala (Ejercicio 4.2)
-        Sala sala = new Sala();
-
+        //Sala sala = new Sala();
+        //Creamos slas de diferentes tipos y se añaden a la biblioteca (Ejercicio 5.7c)
+        SalaLectura salaLectura = new SalaLectura("Sala Cervantes", false, true, 30, "Lectura");
+        SalaEstudio salaEstudio = new SalaEstudio("Sala Quijote", false, true, 30, "Estudio", 15);
+        SalaInformatica salaInformatica = new SalaInformatica("Sala IBM", true, true, 30, "Informática", 30);
+        Sala salaGeneral = biblioteca.crearSala("Sala multiusos", true, true, 40, "Multiusos");
+        biblioteca.addSala(salaLectura);
+        biblioteca.addSala(salaEstudio);
+        biblioteca.addSala(salaInformatica);
+        
         //Se ha comentado porque a partir del ejercicio 5.2, será la Biblioteca la que gestione
         //la creación de salas
         /*  //Creamos varias salas (Ejercicio 4.2)
@@ -41,7 +48,7 @@ public class Main {
         Sala sala4 = new Sala ("Presentaciones", 2, true, "Presentaciones", true); */
 
         //Creación de Salas desde Biblioteca (Ejercicio 5.2)
-        Sala sala1 = biblioteca.crearSala("Sala Estudio", true, true, 20, "Estudio");
+        //Sala sala1 = biblioteca.crearSala("Sala Estudio", true, true, 20, "Estudio");
 
         //Comentamos por el cambio de creación de salas (Ejercicio 5.2)
         /*  //Añadimos salas a la biblioteca (Ejercicio 4.2)
@@ -63,16 +70,23 @@ public class Main {
         biblioteca.buscarLibroPorTitulo("El Quijote");
 
         
-        //Creamos personas
+        /*//Creamos personas
         PersonaPoo p1 = new PersonaPoo("Antonio", "Díaz", 25, "Ancha, 21");
         PersonaPoo p2 = new PersonaPoo("Lourdes", "Fernández", 21, "Andrómeda, 1" );
-        PersonaPoo p3 = new PersonaPoo("Andrés", "Pacheco", 22, "Larga, 4");
+        PersonaPoo p3 = new PersonaPoo("Andrés", "Pacheco", 22, "Larga, 4");*/
+        //Creación de distintas Personas asociadas a salas o a préstamos
+        Usuario usuario1 = new Usuario("José", "García", 44, "Calle Luna 52", 001);
+        Empleado empleado1 = new Empleado("Antonio", "Gómez", 35, "Remedios, 3", "Bibliotecario", 200000);
 
         //Asignar responsable a una persona, desde el Setter creado en Sala (5.2 Asociación)
-        sala1.setResponsable(p1);
-        System.out.println(sala1.getResponsable().getNombre());
+        //También válido en Ejercicio 5.7d
+        salaLectura.setResponsable(usuario1);
+        System.out.println(salaLectura.getResponsable().getNombre());
         //Registrar visita con el método de biblioteca (5.2 Dependencia)
-        biblioteca.registrarVisita(p2);
+        //Cambiamos usuario en el ejercicio 5.7
+        biblioteca.registrarVisita(usuario1);
+        //Mostrar toda la información de la biblioteca
+        biblioteca.mostrarInfo();
 
         
         //Comentamos por el cambio de creación de salas (5.2)
