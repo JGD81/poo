@@ -35,7 +35,7 @@ public class Main {
         Sala sala4 = new Sala ("Presentaciones", 2, true, "Presentaciones", true); */
 
         //Creación de Salas desde Biblioteca (Ejercicio 5.2)
-        Sala sala1 = biblioteca.crearSala("Estudio", 15, true, "Estudio", true);
+        Sala sala1 = biblioteca.crearSala("Sala Estudio", true, true, 20, "Estudio");
 
         //Comentamos por el cambio de creación de salas (Ejercicio 5.2)
         /*  //Añadimos salas a la biblioteca (Ejercicio 4.2)

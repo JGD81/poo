@@ -18,6 +18,11 @@ public class Biblioteca {
     //Constructor sin parámetros
     public Biblioteca() {
         System.out.println("Se ha creado una biblioteca sin datos.");
+        //Inicializamos las listas igualmente en el constructor vacío para que,
+        //en el caso de que algún método intente usarlas, no de error (null) (Ejercicio 5.1)
+        this.libros = new ArrayList<>();
+        this.salas = new ArrayList<>();
+        this.personas = new ArrayList<>();
     }
     
     //Constructor con los parámetros (Horas ya definidas)
@@ -29,6 +34,8 @@ public class Biblioteca {
         //Inicializar listas en el constructor (Ejercicio 4.2)
         this.libros = new ArrayList<>();
         this.salas = new ArrayList<>();
+        //Inicializar lista de personas (Ejercicio 5.1)
+        this.personas = new ArrayList<>();
 
     }
 
@@ -159,10 +166,11 @@ public class Biblioteca {
     }
 
     //Mostrar solo las salas que tienen 0 personas (Ejercicio 4.4.3)
+    //Cambiamos el getter getNumeroPersonas por el nuevo, get numActualPersonas (Ejercicio 5.1)
     public void mostrarSalasDisponibles(){
         boolean esVacia = false;
         for (Sala sala : salas){
-            if (sala.getNumeroPersonas() == 0){
+            if (sala.getNumActualPersonas() == 0){
                 sala.mostrarInfo();
                 esVacia = true;
             }
@@ -171,20 +179,20 @@ public class Biblioteca {
             System.out.println("No hay salas disponibles");
         }
     }
-
+    //Mismo cambio que en el método anterior (Ejercicio 5.1)
     //Mostrar el total de personas de todas las salas (Ejercicio 5)
     public void mostrarTotalPersonas() {
         int totalPersonas = 0;
         for (Sala sala : salas) {
-            totalPersonas += sala.getNumeroPersonas(); // Sumamos las personas de cada sala
+            totalPersonas += sala.getNumActualPersonas(); // Sumamos las personas de cada sala
         }
     
     System.out.println("Número total de personas en todas las salas: " + totalPersonas);
     }
 
     //Método para crear Sala desde Biblioteca (Ejercicio 5.2)
-    public Sala crearSala(String nombre, int capacidad, boolean pizarra, String tipo, boolean disponibleReserva){
-        Sala nuevaSala = new Sala(nombre, capacidad, pizarra, tipo, disponibleReserva);
+    public Sala crearSala(String nombre, boolean pizarra, boolean disponibleReserva, int aforoMaximo, String tipoSala){
+        Sala nuevaSala = new Sala(nombre, pizarra, disponibleReserva, aforoMaximo, tipoSala);
         salas.add(nuevaSala);
         return nuevaSala;
     }
